@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
         ListView lv = (ListView)findViewById(R.id.lv);
         lv.setAdapter(adapter);
+        // Adapter 導入 ListView
         //lv.setOnItemClickListener(itemclick);
     }
     /*private AdapterView.OnItemClickListener itemclick = new AdapterView.OnItemClickListener() {
