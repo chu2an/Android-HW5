@@ -4,9 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -18,21 +16,28 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ArrayList<myListview> playerlist = new ArrayList<myListview>();
+        ArrayList<TeamItem> teamlist = new ArrayList<TeamItem>();
+        // 將 TeamItem 形狀的 ArrayList     new進來
 
-        playerlist.add(new myListview(
-                R.drawable.nba_cavaliers,"騎士",
-                R.drawable.nba_raptors,"暴龍"));
-        playerlist.add(new myListview(
-                R.drawable.nba_spurs,"馬刺",
-                R.drawable.nba_rockets,"火箭"));
+        teamlist.add(new TeamItem(
+                R.drawable.nba_cavaliers,"騎士",51,
+                R.drawable.nba_raptors,"暴龍",31));
+        teamlist.add(new TeamItem(
+                R.drawable.nba_spurs,"馬刺",61,
+                R.drawable.nba_rockets,"火箭",55));
+        //將兩筆資料存入 Arraylist 中
 
-        PlayerArrayAdapter myAdapter =
-                new PlayerArrayAdapter(this, playerlist);
+        TeamArrayAdapter adapter = new TeamArrayAdapter(this,teamlist);
+        //將 Arraylist 導向 ArrarAdapter
 
-        ListView lv_view = (ListView)findViewById(R.id.lv);
-        lv_view.setAdapter(myAdapter);
-        //lv_view.setOnItemClickListener(itemclick);
+        ListView lv = (ListView)findViewById(R.id.lv);
+        lv.setAdapter(adapter);
+        //lv.setOnItemClickListener(itemclick);
     }
-
+    /*private AdapterView.OnItemClickListener itemclick = new AdapterView.OnItemClickListener() {
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            Toast.makeText(MainActivity.this, "Click "+position, Toast.LENGTH_SHORT).show();
+        }
+    };*/
 }
