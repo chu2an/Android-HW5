@@ -44,9 +44,9 @@
         android:id="@+id/tv_TeamScore_A"
         android:layout_width="wrap_content"
         android:layout_height="72dp"
+        android:text="00"
         android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/tv_TeamName_A"
-        android:text="00" />
+        android:layout_toEndOf="@+id/tv_TeamName_A" />
     <!-- 隊伍分數B -->
     <TextView
         android:textSize="15pt"

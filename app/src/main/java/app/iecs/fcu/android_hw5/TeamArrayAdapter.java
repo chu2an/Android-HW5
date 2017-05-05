@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -15,8 +15,10 @@ import java.util.ArrayList;
  * Created by Chuan.an on 2017/5/6.
  */
 
-public class TeamArrayAdapter extends ArrayAdapter<TeamItem>{
+public class TeamArrayAdapter extends ArrayAdapter<TeamItem> {
+
     Context context;
+
     public TeamArrayAdapter(Context context, ArrayList<TeamItem> items){
         super(context,0,items);
         this.context = context;
@@ -26,12 +28,12 @@ public class TeamArrayAdapter extends ArrayAdapter<TeamItem>{
     public View getView (int position, View convertView, ViewGroup parent){
         LayoutInflater inflater = LayoutInflater.from(context);
         // LayoutInflater 的作用是將 "xml版面" 轉換成 "list物件"
-        LinearLayout itemlayout = null;
+        RelativeLayout itemlayout = null;
         if(convertView == null){
-            itemlayout = (LinearLayout) inflater.inflate(R.layout.listitem,null);
+            itemlayout = (RelativeLayout) inflater.inflate(R.layout.listitem,null);
         }
         else{
-            itemlayout = (LinearLayout) convertView;
+            itemlayout = (RelativeLayout) convertView;
         }
         TeamItem item = (TeamItem)getItem(position);
 
