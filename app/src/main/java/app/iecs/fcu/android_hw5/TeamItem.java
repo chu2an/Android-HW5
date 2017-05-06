@@ -7,19 +7,18 @@ import android.widget.ImageView;
  */
 
 public class TeamItem {
-    int LogoA;
-    String TeamNameA;
-    int TeamScoreA;
-    int LogoB;
-    String TeamNameB;
-    int TeamScoreB;
 
-    public TeamItem(int logoA, String teamNameA, int teamScoreA, int logoB, String teamNameB, int teamScoreB) {
+    int LogoA,LogoB;
+    String TeamNameA,TeamNameB;
+    String TeamScoreA,TeamScoreB;
+
+    public TeamItem(int logoA,  String teamNameA , String teamScoreA ,int logoB, String teamNameB, String teamScoreB) {
         LogoA = logoA;
-        TeamNameA = teamNameA;
-        TeamScoreA = teamScoreA;
         LogoB = logoB;
+        TeamNameA = teamNameA;
         TeamNameB = teamNameB;
+        TeamScoreA = teamScoreA;
         TeamScoreB = teamScoreB;
     }
 }
+

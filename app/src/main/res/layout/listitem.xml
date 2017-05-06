@@ -1,60 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
     <!-- 隊伍標誌A -->
-    <ImageView
-        android:id="@+id/iv_TeamLogo_A"
-        android:layout_width="72dp"
-        android:layout_height="72dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"/>
     <!-- 隊伍標誌B -->
-    <ImageView
-        android:id="@+id/iv_TeamLogo_B"
-        android:layout_width="72dp"
-        android:layout_height="72dp"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/iv_TeamLogo_A"/>
     <!-- 隊伍名稱A -->
-    <TextView
-        android:gravity="center"
-        android:id="@+id/tv_TeamName_A"
-        android:layout_width="150dp"
-        android:layout_height="72dp"
-        android:text="隊名"
-        android:textSize="15pt"
-        android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/iv_TeamLogo_A" />
     <!-- 隊伍名稱B -->
-    <TextView
-        android:gravity="center"
-        android:id="@+id/tv_TeamName_B"
-        android:layout_width="150dp"
-        android:layout_height="72dp"
-        android:layout_below="@+id/iv_TeamLogo_A"
-        android:layout_toEndOf="@+id/iv_TeamLogo_B"
-        android:text="隊名"
-        android:textSize="15pt" />
     <!-- 隊伍分數A -->
-    <TextView
-        android:textSize="15pt"
-        android:gravity="center"
-        android:id="@+id/tv_TeamScore_A"
-        android:layout_width="wrap_content"
-        android:layout_height="72dp"
-        android:text="00"
-        android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/tv_TeamName_A" />
     <!-- 隊伍分數B -->
-    <TextView
-        android:textSize="15pt"
-        android:gravity="center"
-        android:id="@+id/tv_TeamScore_B"
+
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="72dp"
-        android:layout_below="@+id/tv_TeamScore_A"
-        android:layout_toEndOf="@+id/tv_TeamName_B"
-        android:text="00" />
-</RelativeLayout>
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_TeamLogo_A"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_weight="1"
+            app:srcCompat="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/tv_TeamName_A"
+            android:layout_width="150dp"
+            android:layout_height="72dp"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/iv_TeamLogo_A"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="隊名"
+            android:textSize="15pt" />
+
+        <TextView
+            android:id="@+id/tv_TeamScore_A"
+            android:layout_width="wrap_content"
+            android:layout_height="72dp"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/tv_TeamName_A"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="00"
+            android:textSize="15pt" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_TeamLogo_B"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/iv_TeamLogo_A"
+            android:layout_weight="1"
+            app:srcCompat="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/tv_TeamName_B"
+            android:layout_width="150dp"
+            android:layout_height="72dp"
+            android:layout_below="@+id/iv_TeamLogo_A"
+            android:layout_toEndOf="@+id/iv_TeamLogo_B"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="隊名"
+            android:textSize="15pt" />
+
+        <TextView
+            android:id="@+id/tv_TeamScore_B"
+            android:layout_width="wrap_content"
+            android:layout_height="72dp"
+            android:layout_below="@+id/tv_TeamScore_A"
+            android:layout_toEndOf="@+id/tv_TeamName_B"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="00"
+            android:textSize="15pt" />
+
+    </LinearLayout>
+
+</LinearLayout>

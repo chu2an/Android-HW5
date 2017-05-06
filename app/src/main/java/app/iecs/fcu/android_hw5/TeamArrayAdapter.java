@@ -1,11 +1,13 @@
 package app.iecs.fcu.android_hw5;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -28,12 +30,12 @@ public class TeamArrayAdapter extends ArrayAdapter<TeamItem> {
     public View getView (int position, View convertView, ViewGroup parent){
         LayoutInflater inflater = LayoutInflater.from(context);
         // LayoutInflater 的作用是將 "xml版面" 轉換成 "list物件"
-        RelativeLayout itemlayout = null;
+        LinearLayout itemlayout = null;
         if(convertView == null){
-            itemlayout = (RelativeLayout) inflater.inflate(R.layout.listitem,null);
+            itemlayout = (LinearLayout) inflater.inflate(R.layout.listitem,null);
         }
         else{
-            itemlayout = (RelativeLayout) convertView;
+            itemlayout = (LinearLayout) convertView;
         }
         TeamItem item = (TeamItem)getItem(position);
 
@@ -54,6 +56,19 @@ public class TeamArrayAdapter extends ArrayAdapter<TeamItem> {
 
         TextView tv_scoreB = (TextView)itemlayout.findViewById(R.id.tv_TeamScore_B);
         tv_scoreB.setText(item.TeamScoreB);
+
+        int TSA = Integer.parseInt(item.TeamScoreA);
+        int TSB = Integer.parseInt(item.TeamScoreB);
+        if( TSA > TSB ){
+            tv_scoreA.setTextColor(Color.RED);
+        }
+        else if(TSB > TSA){
+            tv_scoreB.setTextColor(Color.RED);
+        }
+        else{
+            tv_scoreA.setTextColor(Color.GREEN);
+            tv_scoreB.setTextColor(Color.GREEN);
+        }
 
         return itemlayout;
     }

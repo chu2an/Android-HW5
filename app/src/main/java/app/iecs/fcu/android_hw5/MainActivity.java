@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
-import app.iecs.fcu.android_hw5.TeamItem;
 
 import java.util.ArrayList;
 
@@ -23,11 +22,11 @@ public class MainActivity extends AppCompatActivity {
         // 將 TeamItem 形狀的 ArrayList     new進來
 
         teamlist.add(new TeamItem(
-                R.drawable.nba_cavaliers , "騎士" , 89 ,
-                R.drawable.nba_raptors , "暴龍" , 106 ));
+                R.drawable.nba_cavaliers , "騎士" , "115" ,
+                R.drawable.nba_raptors , "暴龍" , "94" ));
         teamlist.add(new TeamItem(
-                R.drawable.nba_spurs , "馬刺" , 111 ,
-                R.drawable.nba_rockets , "火箭" , 95 ));
+                R.drawable.nba_spurs , "馬刺" , "103" ,
+                R.drawable.nba_rockets , "火箭" , "92" ));
         //將兩筆資料存入 Arraylist 中
 
         TeamArrayAdapter adapter = new TeamArrayAdapter(this,teamlist);
@@ -36,12 +35,12 @@ public class MainActivity extends AppCompatActivity {
         lv = (ListView)findViewById(R.id.lv);
         lv.setAdapter(adapter);
         // Adapter 導入 ListView
-        //lv.setOnItemClickListener(itemclick);
+        lv.setOnItemClickListener(itemclick);
     }
-    /*private AdapterView.OnItemClickListener itemclick = new AdapterView.OnItemClickListener() {
+    private AdapterView.OnItemClickListener itemclick = new AdapterView.OnItemClickListener() {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             Toast.makeText(MainActivity.this, "Click "+position, Toast.LENGTH_SHORT).show();
         }
-    };*/
+    };
 }
